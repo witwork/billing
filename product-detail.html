@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" data-lang-en="English">
+<head>
+    <title>Product Detail - 2GOCDN</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Product detail page">
+    <meta name="keywords" content="hosting, server, cloud, cdn">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+    <link rel="stylesheet" href="reviews-main.css">
+    <link rel="stylesheet" href="clients-v2.css">
+    <link rel="stylesheet" href="new-swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lilita+One:regular&amp;subset=latin,latin-ext">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin,latin-ext,math,symbols,vietnamese">
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style40.css">
+    <link rel="stylesheet" href="language4.css">
+    
+    <style>
+        .product-detail {
+            padding: 40px 0;
+        }
+        .product-header {
+            margin-bottom: 30px;
+        }
+        .product-title {
+            font-size: 32px;
+            font-weight: bold;
+            color: #0800a4;
+            margin-bottom: 15px;
+        }
+        .product-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .product-availability {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 4px;
+            color: white;
+            font-weight: 500;
+        }
+        .product-availability.available {
+            background-color: #00b500;
+        }
+        .product-availability.unavailable {
+            background-color: #fc0101;
+        }
+        .product-price {
+            font-size: 28px;
+            color: #0150c8;
+            font-weight: bold;
+        }
+        .product-price-period {
+            font-size: 16px;
+            color: #464647;
+        }
+        .product-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .product-image {
+            flex: 0 0 40%;
+            max-width: 40%;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .product-image img {
+            width: 100%;
+            height: auto;
+        }
+        .product-info {
+            flex: 1;
+        }
+        .product-description {
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        .product-specs {
+            background: #f5f7fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .product-specs-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .product-specs-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .product-spec-item {
+            display: flex;
+            align-items: center;
+        }
+        .product-spec-icon {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .product-spec-icon img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        .product-spec-text {
+            font-weight: 500;
+        }
+        .payment-options {
+            margin-bottom: 30px;
+        }
+        .months {
+            margin-bottom: 20px;
+        }
+        .order-button {
+            display: inline-block;
+            background-color: #0150c8;
+            color: white;
+            font-weight: bold;
+            padding: 12px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .order-button:hover {
+            background-color: #013ca9;
+        }
+        .related-products {
+            margin-top: 60px;
+        }
+        .related-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0800a4;
+            margin-bottom: 20px;
+        }
+        .error-message {
+            padding: 100px 0;
+            text-align: center;
+            font-size: 18px;
+            color: #666;
+        }
+        .loading {
+            padding: 100px 0;
+            text-align: center;
+            font-size: 18px;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .product-content {
+                flex-direction: column;
+            }
+            .product-image {
+                flex: 0 0 100%;
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+
+        <!-- header -->
+        <header class="header">
+            <!-- header-top -->
+            <div class="header__top header-top">
+                <div class="wrap header-top__wrap">
+                    <div class="header__support header-support">
+                        <div class="logo header-support__logo">
+                            <div class="logo__link">
+                                <img src="images/logo.png" alt="Logo" class="logo__image">
+                            </div>          
+                        </div>
+                        <div class="header-support__link header-support__link--partner">
+                            <img src="images/layer_11.png" alt="" width="31" height="20" style="padding-right: 5px;"> 
+                            <span>Partners</span>
+                            <img src="images/layer_10.png" alt="" width="10" height="5" style="padding-left: 5px;">
+                            <ul>
+                                <li><a href="#">Affiliate Program</a></li>
+                                <li><a href="#">Resellers</a></li>
+                            </ul>
+                        </div>
+                        <a data-href="#ffffff" class="header-support__link header-support__link--money redirect-link">
+                            <img src="images/layer_12.png" alt="" width="20" height="20" style="padding-right: 5px;"> 
+                            <span>Methods of payment</span>
+                        </a>
+                        <div class="phone phone--header">
+                            <div class="phone__select">
+                                <img src="images/layer_17.png" alt="" width="20" height="20" style="padding-right: 5px;"> Contact
+                                <svg class="icon phone__icon phone__icon--arrow">
+                                    <use xlink:href="/templates/pq/img/sprite.svg#arrow-down-outline"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-top__right-col">
+                        <div class="auth auth--header">
+                            <a href="#" class="auth__login-link auth__login-link--reg">
+                                <img src="images/layer_22.png" alt="" width="15" style="padding-right: 5px;">
+                                Registration
+                            </a>
+                            <a href="#" class="auth__login-link">
+                                <img src="images/layer_21.png" alt="" width="15" style="padding-right: 5px;">
+                                Login to billing
+                            </a>
+                        </div>
+                        <button class="menu-btn" type="button"><span></span></button>
+                    </div>
+                </div>
+            </div>
+            <!-- /header-top -->
+            <div class="header__bg">
+                <!-- header-links -->
+                <div class="header-links">
+                    <div class="wrap header-links__wrap">
+                        <div class="logo">
+                            <div class="logo__link">
+                                <img src="images/logo.png" class="logo__image" alt="Logo">
+                            </div>
+                        </div>
+                        <nav class="menu header-menu">
+                            <ul class="menu__list">
+                                <li class="menu__item menu__item--sub">
+                                    <a href="#" class="menu__link menu__link--sub">
+                                        Products
+                                        <img src="images/layer_10_copy.png" alt="" width="14" height="9" style="padding-left: 5px;">
+                                    </a>
+                                    <ul class="menu__dropdown menu-dropdown menu-dropdown--vps">
+                                        <li class="menu-dropdown__item">
+                                            <a href="#" class="menu-dropdown__link menu-dropdown__link--hot">
+                                                <span>Product 1</span>
+                                            </a>
+                                        </li>
+                                        <li class="menu-dropdown__item">
+                                            <a href="#" class="menu-dropdown__link menu-dropdown__link--hot">
+                                                <span>Product 2</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu__item"><a href="#" class="menu__link">Features</a></li>
+                                <li class="menu__item"><a href="#" class="menu__link">Marketplace</a></li>
+                                <li class="menu__item"><a href="#" class="menu__link">Pricing</a></li>
+                                <li class="menu__item"><a href="#" class="menu__link">Company</a></li>
+                                <li class="menu__item menu__item--sub">
+                                    <a href="#" class="menu__link menu__link--sub">
+                                        More
+                                        <img src="images/layer_10_copy.png" alt="" width="14" height="9" style="padding-left: 5px;">
+                                    </a>
+                                    <ul class="menu__dropdown menu-dropdown menu-dropdown--vps">
+                                        <li class="menu-dropdown__item">
+                                            <a href="#" class="menu-dropdown__link menu-dropdown__link--hot">
+                                                <span>More Link 1</span>
+                                            </a>
+                                        </li>
+                                        <li class="menu-dropdown__item">
+                                            <a href="#" class="menu-dropdown__link menu-dropdown__link--hot">
+                                                <span>More Link 2</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu__item layer-14-holder"><a href="#" class="menu__link">Contact Sales</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <!--/header-links-->
+            </div>
+        </header>
+        <!-- /header -->
+
+        <!-- Main Product Detail Section -->
+        <section class="container product-detail">
+            <div class="wrap">
+                <div id="product-detail-container">
+                    <div class="loading">Loading product details...</div>
+                </div>
+
+                <div class="related-products">
+                    <h2 class="related-title">Related Products</h2>
+                    <div id="related-products-container" class="row row--eq-height packages">
+                        <!-- Related products will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /Main Product Detail Section -->
+
+        <!-- footer -->
+        <footer class="footer">
+            <div style="background-color: #022052;">
+                <div class="wrap">
+                    <div class="footer__top footer-top">
+                        <div class="footer-top__right-col">
+                            <div class="footer-menu">
+                                <div class="footer-menu__title">
+                                    <span>Hosting & Services</span>
+                                </div>
+                                <ul class="footer-menu__list">
+                                    <li class="footer-menu__item"><a href="#" class="footer-menu__link">Cloud Compute</a></li>
+                                    <li class="footer-menu__item"><a href="#" class="footer-menu__link">Cloud GPU</a></li>
+                                    <li class="footer-menu__item"><a href="#" class="footer-menu__link">Bare Metal</a></li>
+                                    <li class="footer-menu__item"><a href="#" class="footer-menu__link">File System</a></li>  
+                                    <li class="footer-menu__item"><a href="#" class="footer-menu__link">Object Storage</a></li>              
+                                    <li class="footer-menu__item"><a href="#" class="footer-menu__link">Block Storage</a></li>
+                                    <li class="footer-menu__item"><a href="#" class="footer-menu__link">Managed Databases</a></li>
+                                    <li class="footer-menu__item"><a href="#" class="footer-menu__link">CDN</a></li>
+                                    <li class="footer-menu__item"><a href="#" class="footer-menu__link">Serverless</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footer-top__left-col">
+                            <div class="footer-menu">
+                                <div class="footer-menu__title">
+                                    <span>Domain & Security</span>
+                                </div>
+                                <div class="footer-menu__box">
+                                    <ul class="footer-menu__list">
+                                        <li class="footer-menu__item"><a href="#" class="footer-menu__link">Domain Search</a></li> 
+                                        <li class="footer-menu__item"><a href="#" class="footer-menu__link">Transfer Domain</a></li>
+                                        <li class="footer-menu__item"><a href="#" class="footer-menu__link">SSL Certificates</a></li> 
+                                        <li class="footer-menu__item"><a href="#" class="footer-menu__link">Website Security</a></li>  
+                                        <li class="footer-menu__item"><a href="#" class="footer-menu__link">Website Backup</a></li>
+                                        <li class="footer-menu__item"><a href="#" class="footer-menu__link">Professional Email</a></li>  
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="footer-menu">
+                                <div class="footer-menu__title">
+                                    <span>Features</span>
+                                </div>
+                                <ul class="footer-menu__list">
+                                    <li class="footer-menu__item"><a href="#" class="footer-menu__link">Features</a></li> 
+                                    <li class="footer-menu__item"><a href="#" class="footer-menu__link">Locations</a></li>
+                                    <li class="footer-menu__item"><a href="#" class="footer-menu__link">Advanced Network</a></li> 
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footer-top__right-col">
+                            <div class="footer-menu">
+                                <div class="footer-menu__title">
+                                    <span>About Company</span>
+                                </div>
+                                <ul class="footer-menu__list">
+                                    <li class="footer-menu__item"><a href="#" class="footer-menu__link">Our Team</a></li> 
+                                    <li class="footer-menu__item"><a href="#" class="footer-menu__link">News</a></li>
+                                    <li class="footer-menu__item"><a href="#" class="footer-menu__link">Brand Assets</a></li> 
+                                </ul>
+
+                                <div class="social social--footer">
+                                    <div class="footer-menu__title">
+                                        <span>Stay connect with us!</span>
+                                    </div>
+                                    <ul class="social__list">
+                                        <li class="social__item"><a href="#" class="social__link" target="_blank" rel="nofollow"><img src="images/social_icon1.png"></a></li>
+                                        <li class="social__item"><a href="#" class="social__link" target="_blank" rel="nofollow"><img src="images/social_icon2.png"></a></li>
+                                        <li class="social__item"><a href="#" class="social__link" target="_blank" rel="nofollow"><img src="images/social_icon3.png"></a></li>
+                                        <li class="social__item"><a href="#" class="social__link" target="_blank" rel="nofollow"><img src="images/social_icon4.png"></a></li>
+                                    </ul>    
+                                </div>      
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__middle footer-middle">
+                <div class="wrap">
+                    <div class="copyright">
+                        <div class="copyright__menu"><a href="#">Terms of Service</a> | <a href="#">AUP/DMCA</a> | <a href="#">Privacy Policy</a> | <a href="#">Cookie Policy</a></div>
+                        <div class="copyright__text">Copyright &copy; 2025 Colobix LTD. All Rights Reserved.</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- /footer -->
+        <div class="menu-overlay"></div>
+    </div>
+
+    <!-- js -->
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="swiper-bundle-new.min.js"></script>
+    <script src="headhesive.min.js"></script>
+    <script src="init-new13.js"></script>
+    <script src="products-api.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async function() {
+            const API_URL = 'http://139.84.141.1:1337';
+            const detailContainer = document.getElementById('product-detail-container');
+            const relatedContainer = document.getElementById('related-products-container');
+            
+            // Get product ID from URL parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
+            
+            if (!productId) {
+                detailContainer.innerHTML = `
+                    <div class="error-message">
+                        <h2>Product Not Found</h2>
+                        <p>Sorry, the product you are looking for could not be found.</p>
+                        <p><a href="product.html">Back to Products</a></p>
+                    </div>
+                `;
+                return;
+            }
+            
+            try {
+                // Fetch the product detail using your existing API function
+                const product = await getProductById(productId);
+                
+                if (!product) {
+                    detailContainer.innerHTML = `
+                        <div class="error-message">
+                            <h2>Product Not Found</h2>
+                            <p>Sorry, the product you are looking for could not be found.</p>
+                            <p><a href="product.html">Back to Products</a></p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                // Update page title
+                document.title = `${product.title} - 2GOCDN`;
+                
+                // Render product details
+                detailContainer.innerHTML = `
+                    <div class="product-header">
+                        <h1 class="product-title">${product.title || 'Product'}</h1>
+                        <div class="product-meta">
+                            <div>
+                                <span class="product-availability ${product.active ? 'available' : 'unavailable'}">
+                                    ${product.active ? 'In Stock' : 'Out of Stock'}
+                                </span>
+                                <span style="margin-left: 10px;">Delivery Time: 10m</span>
+                            </div>
+                            <div>
+                                <span class="product-price">$${product.price || '0.00'}</span>
+                                <span class="product-price-period">per month</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-content">
+                        <div class="product-image">
+                            <img src="images/layer_6.png" alt="${product.title}">
+                        </div>
+                        
+                        <div class="product-info">
+                            <div class="product-description">
+                                <h2>Product Description</h2>
+                                <p>${product.description || 'No description available for this product.'}</p>
+                                <p>This high-performance server is designed to handle your most demanding workloads with ease. Whether you're running business applications, hosting websites, or managing databases, this solution provides the reliability and performance you need.</p>
+                            </div>
+                            
+                            <div class="product-specs">
+                                <h3 class="product-specs-title">Technical Specifications</h3>
+                                <div class="product-specs-list">
+                                    <div class="product-spec-item">
+                                        <div class="product-spec-icon">
+                                            <img src="images/layer_56.png" alt="Server Type">
+                                        </div>
+                                        <div class="product-spec-text">${product.itemTypeName || 'Server'}</div>
+                                    </div>
+                                    <div class="product-spec-item">
+                                        <div class="product-spec-icon">
+                                            <img src="images/layer_56.png" alt="Project">
+                                        </div>
+                                        <div class="product-spec-text">${product.project || 'Default Project'}</div>
+                                    </div>
+                                    <div class="product-spec-item">
+                                        <div class="product-spec-icon">
+                                            <img src="images/layer_56.png" alt="Processing">
+                                        </div>
+                                        <div class="product-spec-text">${product.processingModules || 'Standard Processing'}</div>
+                                    </div>
+                                    <div class="product-spec-item">
+                                        <div class="product-spec-icon">
+                                            <img src="images/layer_56.png" alt="Deployment">
+                                        </div>
+                                        <div class="product-spec-text">${product.needProcessing ? 'Processing Required' : 'Ready to deploy'}</div>
+                                    </div>
+                                    ${product.externalData ? generateExtraSpecs(product.externalData) : ''}
+                                </div>
+                            </div>
+                            
+                            <div class="payment-options">
+                                <h3 class="product-specs-title">Payment Options</h3>
+                                <div class="tariff__months months trf-months">
+                                    <label>
+                                        <span class="months__discount month-discount">0%</span>
+                                        <input class="months-one" type="radio" checked="">
+                                        <span></span>
+                                        <span class="months__note">1 month</span>
+                                    </label>
+                                    <label>
+                                        <span class="months__discount month-discount">5%</span>
+                                        <input type="radio">
+                                        <span></span>
+                                        <span class="months__note">Quarterly</span>
+                                    </label>
+                                    <label>
+                                        <span class="months__discount month-discount">10%</span>
+                                        <input type="radio">
+                                        <span></span>
+                                        <span class="months__note">Half Yearly</span>
+                                    </label>
+                                    <label>
+                                        <span class="months__discount month-discount">15%</span>
+                                        <input type="radio">
+                                        <span></span>
+                                        <span class="months__note">Yearly</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <a href="#" class="order-button">ORDER NOW</a>
+                        </div>
+                    </div>
+                `;
+                
+                // Load related products
+                loadRelatedProducts(productId);
+                
+            } catch (error) {
+                console.error('Error loading product details:', error);
+                detailContainer.innerHTML = `
+                    <div class="error-message">
+                        <h2>Error Loading Product</h2>
+                        <p>Sorry, there was an error loading the product details. Please try again later.</p>
+                        <p><a href="product.html">Back to Products</a></p>
+                    </div>
+                `;
+            }
+        });
+        
+        // Helper function to generate extra specifications from externalData
+        function generateExtraSpecs(externalData) {
+            let specsHtml = '';
+            
+            if (typeof externalData !== 'object') {
+                return '';
+            }
+            
+            // Process processing module count if available
+            if (externalData.processingmodule_count) {
+                specsHtml += `
+                    <div class="product-spec-item">
+                        <div class="product-spec-icon">
+                            <img src="images/layer_56.png" alt="Processing Modules">
+                        </div>
+                        <div class="product-spec-text">${externalData.processingmodule_count} Processing Modules</div>
+                    </div>
+                `;
+            }
+            
+            // Add other external data properties as specs
+            Object.entries(externalData).forEach(([key, value]) => {
+                if (key !== 'processingmodule_count' && value) {
+                    const displayKey = key.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+                    specsHtml += `
+                        <div class="product-spec-item">
+                            <div class="product-spec-icon">
+                                <img src="images/layer_56.png" alt="${displayKey}">
+                            </div>
+                            <div class="product-spec-text">${displayKey}: ${value}</div>
+                        </div>
+                    `;
+                }
+            });
+            
+            return specsHtml;
+        }
+        
+        // Function to load related products
+        async function loadRelatedProducts(currentProductId) {
+            const relatedContainer = document.getElementById('related-products-container');
+            
+            try {
+                // Fetch all products
+                const products = await fetchProducts();
+                const allProducts = products.data || [];
+                
+                // Filter out current product and limit to 3 related products
+                const relatedProducts = allProducts
+                    .filter(p => p.id != currentProductId)
+                    .slice(0, 3);
+                
+                if (relatedProducts.length === 0) {
+                    relatedContainer.parentElement.style.display = 'none';
+                    return;
+                }
+                
+                let html = '';
+                
+                relatedProducts.forEach((product) => {
+                    html += `
+                        <div class="col-lg-6 col-xl-4 cursor--auto">
+                            <div class="tariff__item tariff__item--retail trf-item mix">
+                                <div class="tariff__header">
+                                    <div class="tariff__name">
+                                        <span class="">${product.title || 'Product'}</span>
+                                    </div>
+                                    <div class="tariff-info__desc" style="margin-top: 30px; margin-bottom: 30px">
+                                        Delivery Time: <span style="color: #00b500;">10m</span>
+                                        <br>
+                                        Stock Now: <span style="color: ${product.active ? '#00b500' : '#fc0101'};">${product.active ? 'Available' : 'Out of Stock'}</span>
+                                    </div>
+                                </div>
+                                <div class="tariff__bottom">
+                                    <div class="tariff__price tariff__price--transfer trf-rate-value">
+                                        <b style="color: #0150c8;">$${product.price || '0.00'}</b> 
+                                        <span style="color: #464647;">per month</span>
+                                    </div>
+                                </div>
+                                <div class="tariff__footer">
+                                    <div class="tariff__order">
+                                        <a href="product-detail.html?id=${product.id}" class="btn tariff__order-btn tariff-link" style="color: #fff;" data-link="on">
+                                            <span>VIEW DETAILS</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                relatedContainer.innerHTML = html;
+                
+            } catch (error) {
+                console.error('Error loading related products:', error);
+                relatedContainer.parentElement.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
